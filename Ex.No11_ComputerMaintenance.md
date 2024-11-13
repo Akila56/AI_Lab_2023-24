@@ -1,5 +1,5 @@
-# Ex.No: 11  Logic Programming –  Computer Maintenance Expert System
-### DATE: 23-09-2024                                                                           
+# Ex.No: 9  Logic Programming –  Computer Maintenance Expert System
+### DATE: 19-09-2024                                                                           
 ### REGISTER NUMBER : 212222060012
 ### AIM: 
 Write a Prolog program to build a computer maintenance expert system.
@@ -14,31 +14,31 @@ Write a Prolog program to build a computer maintenance expert system.
 8. Find the fault of computer by passing query to system.
      
 ### Program:
-```
-fault(printer_head) :-
-	problem(not_printing),
-	problem(missing_dots),
-	problem(nonuniform_printing).
-fault(ribbon) :-
-	problem(not_printing),
-	problem(missing_dots),
-	problem(spread_ink).
-fault(paper) :-
-	problem(not_printing),
-	problem(paper_jam),
-	problem(out_of_paper).
-fault(motherboard) :-
-	problem(long_beep),
-	problem(short_beep).
-fault(hard_disc) :-
-	problem(two_short_beeps),
-	problem(blank_display).
-problem(not_printing).
-problem(missing_dots).
-problem(spread_ink).
-problem(two_short_beeps).
-problem(blank_display).
-```
+
+fault(printer_head) :-<br>
+	problem(not_printing),<br>
+	problem(missing_dots),<br>
+	problem(nonuniform_printing).<br>
+fault(ribbon) :-<br>
+	problem(not_printing),<br>
+	problem(missing_dots),<br>
+	problem(spread_ink).<br>
+fault(paper) :-<br>
+	problem(not_printing),<br>
+	problem(paper_jam),<br>
+	problem(out_of_paper).<br>
+fault(motherboard) :-<br>
+	problem(long_beep),<br>
+	problem(short_beep).<br>
+fault(hard_disc) :-<br>
+	problem(two_short_beeps),<br>
+	problem(blank_display).<br>
+problem(not_printing).<br>
+problem(missing_dots).<br>
+problem(spread_ink).<br>
+problem(two_short_beeps).<br>
+problem(blank_display).<br>
+
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/98280dae-ff84-481c-89a5-d238710a09b0)
