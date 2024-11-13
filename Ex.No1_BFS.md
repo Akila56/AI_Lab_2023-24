@@ -13,29 +13,29 @@ To write a python program to implement Breadth first Search.
 7.   Call the bfs function by passing arguments visited, graph and starting node.
 8.   Stop the program.
 ### Program:
-graph={
-    '2':['3','4'],
-    '3':['5'],
-    '4':['6','7'],
-    '6':[ ],
-    '5':['6'],
-    '7':['8'],
-    '8':[ ]
-}
-visited=[]
-queue=[]
-def bfs(visted,node,graph):
-    visited.append(node)
-    queue.append(node)
-    while queue:
-        m=queue.pop(0)
-        print(m)
-        for neighbour in graph[m]:
-            if neighbour not in visited:
-                visited.append(neighbour)
-                queue.append(neighbour)
-print("BFS order is")
-bfs(visited,'2',graph)
+graph={<br>
+    '2':['3','4'],<br>
+    '3':['5'],<br>
+    '4':['6','7'],<br>
+    '6':[ ],<br>
+    '5':['6'],<br>
+    '7':['8'],<br>
+    '8':[ ]<br>
+}<br>
+visited=[]<br>
+queue<br>
+def bfs(visted,node,graph):<br>
+    visited.append(node)<br>
+    queue.append(node)<br>
+    while queue:***<br>
+        m=queue.pop(0)<br>
+        print(m)<br>
+        for neighbour in graph[m]:<br>
+            if neighbour not in visited:<br>
+                visited.append(neighbour)<br>
+                queue.append(neighbour)<br>
+print("BFS order is")<br>
+bfs(visited,'2',graph)<br>
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/8ddf5d05-d5a1-40ba-a74a-2554b9a4c733)
