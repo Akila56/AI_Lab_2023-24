@@ -27,7 +27,7 @@ queue<br>
 def bfs(visted,node,graph):<br>
     visited.append(node)<br>
     queue.append(node)<br>
-    while queue:***<br>
+    while queue:<br>
         m=queue.pop(0)<br>
         print(m)<br>
         for neighbour in graph[m]:<br>
