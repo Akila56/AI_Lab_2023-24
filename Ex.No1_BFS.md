@@ -1,9 +1,13 @@
 # Ex.No: 1  Implementation of Breadth First Search 
+
 ### DATE: 8.8.2024                                                                          
 ### REGISTER NUMBER : 212222060012
 ### AIM: 
+
 To write a python program to implement Breadth first Search. 
+
 ### Algorithm:
+
 1. Start the program
 2. Create the graph by using adjacency list representation
 3. Define a function bfs and take the set “visited” is empty and “queue” is empty
@@ -12,7 +16,9 @@ To write a python program to implement Breadth first Search.
 6.  Creating loop to print the visited node.
 7.   Call the bfs function by passing arguments visited, graph and starting node.
 8.   Stop the program.
+
 ### Program:
+
 graph={<br>
     '2':['3','4'],<br>
     '3':['5'],<br>
@@ -38,7 +44,9 @@ print("BFS order is")<br>
 bfs(visited,'2',graph)<br>
 
 ### Output:
+
 ![image](https://github.com/user-attachments/assets/8ddf5d05-d5a1-40ba-a74a-2554b9a4c733)
 
 ### Result:
+
 Thus the breadth first search order was found sucessfully.
