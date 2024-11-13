@@ -1,5 +1,5 @@
-# Ex.No: 9  Planning –  Monkey Banana Problem
-### DATE:   17-10-2024                                                                         
+# Ex.No: 12  Planning –  Monkey Banana Problem
+### DATE:   10-10-2024                                                                         
 ### REGISTER NUMBER : 212222060012
 ### AIM: 
 To find the sequence of plan for Monkey Banana problem using PDDL Editor.
@@ -12,76 +12,75 @@ Step 5:   Define a problem for Monkey Banana problem.<br>
 Step 6:  Obtain the plan for given problem.<br> 
 Step 7: Stop the program.<br> 
 
-### Program:
-```
-(define (domain monkey)	       
-  (:requirements :strips)
-   (:constants monkey box knife bananas glass waterfountain)
-   (:predicates (location ?x)
-	       (on-floor)
-	       (at ?m ?x)
-	       (hasknife)
-	       (onbox ?x)
-	       (hasbananas)
-	       (hasglass)
-	       (haswater))
-   ;; movement and climbing
-  (:action GO-TO
-	     :parameters (?x ?y)
-	     :precondition (and (location ?x) (location ?y) (on-floor) (at monkey ?y))
-	     :effect (and (at monkey ?x) (not (at monkey ?y))))
-   (:action CLIMB
-	     :parameters (?x)
-	     :precondition (and (location ?x) (at box ?x) (at monkey ?x))
-	     :effect (and (onbox ?x) (not (on-floor))))
-   (:action PUSH-BOX
-	     :parameters (?x ?y)
-	     :precondition (and (location ?x) (location ?y) (at box ?y) (at monkey ?y) 
-				 (on-floor))
-	     :effect (and (at monkey ?x) (not (at monkey ?y))
-			   (at box ?x)    (not (at box ?y))))
-  ;; getting bananas
-  (:action GET-KNIFE
-	     :parameters (?y)
-         :precondition (and (location ?y) (at knife ?y) (at monkey ?y))
-	     :effect (and (hasknife) (not (at knife ?y))))
-  (:action GRAB-BANANAS
-	     :parameters (?y)
-	     :precondition (and (location ?y) (hasknife) 
-                                 (at bananas ?y) (onbox ?y))
-	     :effect (hasbananas))
-  ;; getting water
-  (:action PICKGLASS
-	     :parameters (?y)
-	     :precondition (and (location ?y) (at glass ?y) (at monkey ?y))
-	     :effect (and (hasglass) (not (at glass ?y))))
-  (:action GETWATER
-	     :parameters (?y)
-	     :precondition (and (location ?y) (hasglass)
-				 (at waterfountain ?y)
-				 (at monkey ?y)
-				 (onbox ?y))
-	     :effect (haswater)))
+
+(define (domain monkey)	    <br>   
+  (:requirements :strips)<br>
+   (:constants monkey box knife bananas glass waterfountain)<br>
+   (:predicates (location ?x)<br>
+	       (on-floor)<br>
+	       (at ?m ?x)<br>
+	       (hasknife)<br>
+	       (onbox ?x)<br>
+	       (hasbananas)<br>
+	       (hasglass)<br>
+	       (haswater))<br>
+   ;; movement and climbing<br>
+  (:action GO-TO<br>
+	     :parameters (?x ?y)<br>
+	     :precondition (and (location ?x) (location ?y) (on-floor) (at monkey ?y))<br>
+	     :effect (and (at monkey ?x) (not (at monkey ?y))))<br>
+   (:action CLIMB<br>
+	     :parameters (?x)<br>
+	     :precondition (and (location ?x) (at box ?x) (at monkey ?x))<br>
+	     :effect (and (onbox ?x) (not (on-floor))))<br>
+   (:action PUSH-BOX<br>
+	     :parameters (?x ?y)<br>
+	     :precondition (and (location ?x) (location ?y) (at box ?y) (at monkey ?y) <br>
+				 (on-floor))<br>
+	     :effect (and (at monkey ?x) (not (at monkey ?y))<br>
+			   (at box ?x)    (not (at box ?y))))<br>
+  ;; getting bananas<br>
+  (:action GET-KNIFE<br>
+	     :parameters (?y)<br>
+         :precondition (and (location ?y) (at knife ?y) (at monkey ?y))<br>
+	     :effect (and (hasknife) (not (at knife ?y))))<br>
+  (:action GRAB-BANANAS<br>
+	     :parameters (?y)<br>
+	     :precondition (and (location ?y) (hasknife) <br>
+                                 (at bananas ?y) (onbox ?y))<br>
+	     :effect (hasbananas))<br>
+  ;; getting water<br>
+  (:action PICKGLASS<br>
+	     :parameters (?y)<br>
+	     :precondition (and (location ?y) (at glass ?y) (at monkey ?y))<br>
+	     :effect (and (hasglass) (not (at glass ?y))))<br>
+  (:action GETWATER<br>
+	     :parameters (?y)<br>
+	     :precondition (and (location ?y) (hasglass)<br>
+				 (at waterfountain ?y)<br>
+				 (at monkey ?y)<br>
+				 (onbox ?y))<br>
+	     :effect (haswater)))<br>
 ```
 
 ### Input :
 ```
-(define (problem pb1)
-    	(:domain monkey)
-  	(:objects p1 p2 p3 p4 bananas monkey box knife)
-  	(:init (location p1)
-		(location p2)
-		(location p3)
-		(location p4)
-	 	(at monkey p1)
-		(on-floor)
-		(at box p2)
-		(at bananas p3)
-	 	(at knife p4)
-	)
-  	(:goal (and (hasbananas)))
-)
-```
+(define (problem pb1)<br>
+    	(:domain monkey)<br>
+  	(:objects p1 p2 p3 p4 bananas monkey box knife)<br>
+  	(:init (location p1)<br>
+		(location p2)<br>
+		(location p3)<br>
+		(location p4)<br>
+	 	(at monkey p1)<br>
+		(on-floor)<br>
+		(at box p2)<br>
+		(at bananas p3)<br>
+	 	(at knife p4)<br>
+	)<br>
+  	(:goal (and (hasbananas)))<br>
+)<br>
+
 
 ### Output/Plan:
 ![image](https://github.com/user-attachments/assets/d7d0e6db-122d-40d8-8f2d-4374e40b8cb9)
