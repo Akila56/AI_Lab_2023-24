@@ -1,9 +1,13 @@
 # Ex.No: 3  Implementation of Minimax Search
-### DATE:    7/9/2024                                                                        
+### DATE:    22/8/2024                                                                        
 ### REGISTER NUMBER : 212222060012
+
 ### AIM: 
+
 Write a mini-max search algorithm to find the optimal value of MAX Player from the given graph.
+
 ### Algorithm:
+
 1. Start the program
 2. import the math package
 3. Specify the score value of leaf nodes and find the depth of binary tree from leaf nodes.
@@ -32,6 +36,7 @@ def minimax (curDepth, nodeIndex, maxTurn, scores,targetDepth):
                      True, scores, targetDepth))
      
 # Driver code
+
 scores = [3, 5, 2, 9, 12, 5, 23, 20]
 treeDepth = math.log(len(scores), 2) # calculate depth of node  log 8 (base 2) = 3)
 print("The optimal value is : ", end = "")
@@ -43,4 +48,5 @@ print(minimax(0, 0, True, scores,treeDepth))
 ![314006689-adcb68a3-5c92-4ffb-be05-6645b019cabf](https://github.com/user-attachments/assets/3b3cb69b-0f36-49ba-b209-5ddde00bc742)
 
 ### Result:
+
 Thus the optimum value of max player was found using minimax search.
