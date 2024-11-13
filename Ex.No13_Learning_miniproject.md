@@ -1,5 +1,5 @@
-# Ex.No: 10 Learning – Use Supervised Learning  
-### DATE:   9-11-2024                                                                   
+# Ex.No: 10 Learning – Diabetes Prediction
+### DATE:24-10-2024                                                                   
 ### REGISTER NUMBER : 212222060012
 ### AIM: 
 To write a program to train the classifier for Diabetes Prediction.
@@ -17,52 +17,52 @@ Create a Gradio interface using 'gr.Interface' and Specify the function to be us
 Launch the Gradio web application, enabling sharing, to allow users to input their data and get predictions regarding diabetes risk.
 Stop the program.
 ### Program:
-from google.colab import drive
-drive.mount('/content/gdrive')
-#import packages
-import numpy as np
-import pandas as pd
-pip install gradio
-pip install typing-extensions --upgrade
-!python --version
- pip install --upgrade typing
-import gradio as gr
-import pandas as pd
-cd /content/gdrive/MyDrive/demo/gradio_project-main
-#get the data
-data = pd.read_csv('diabetes.csv')
-data.head()
-print(data.columns)
-x = data.drop(['Outcome'], axis=1)
-y = data['Outcome']
-print(x[:5])
-#split data
-from sklearn.model_selection import train_test_split
+from google.colab import drive<br>
+drive.mount('/content/gdrive')<br>
+#import packages<br>
+import numpy as np<br>
+import pandas as pd<br>
+pip install gradio<br>
+pip install typing-extensions --upgrade<br>
+!python --version<br>
+ pip install --upgrade typing<br>
+import gradio as gr<br>
+import pandas as pd<br>
+cd /content/gdrive/MyDrive/demo/gradio_project-main<br>
+#get the data<br>
+data = pd.read_csv('diabetes.csv')<br>
+data.head()<br>
+print(data.columns)<br>
+x = data.drop(['Outcome'], axis=1)<br>
+y = data['Outcome']<br>
+print(x[:5])<br>
+#split data<br>
+from sklearn.model_selection import train_test_split<br>
 
-x_train, x_test, y_train, y_test= train_test_split(x,y)
-#scale data
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-x_train_scaled = scaler.fit_transform(x_train)
-x_test_scaled = scaler.fit_transform(x_test)
-#instatiate model
-from sklearn.neural_network import MLPClassifier
-model = MLPClassifier(max_iter=1000, alpha=1)
-model.fit(x_train, y_train)
-print("Model Accuracy on training set:", model.score(x_train, y_train))
-print("Model Accuracy on Test Set:", model.score(x_test, y_test))
-print(data.columns)
-#create a function for gradio
-def diabetes(Pregnancies, Glucose, Blood_Pressure, SkinThickness, Insulin, BMI,Diabetes_Pedigree, Age):
-    x = np.array([Pregnancies,Glucose,Blood_Pressure,SkinThickness,Insulin,BMI,Diabetes_Pedigree,Age])
-    prediction = model.predict(x.reshape(1, -1))
-    if(prediction==0):
-      return "NO"
-    else:
-      return "YES"
-outputs = gr.Textbox()
-app = gr.Interface(fn=diabetes, inputs=['number','number','number','number','number','number','number','number'], outputs=outputs,description="Detection of Diabeties")
-app.launch(share=True)
+x_train, x_test, y_train, y_test= train_test_split(x,y)<br>
+#scale data<br>
+from sklearn.preprocessing import StandardScaler<br>
+scaler = StandardScaler()<br>
+x_train_scaled = scaler.fit_transform(x_train)<br>
+x_test_scaled = scaler.fit_transform(x_test)<br>
+#instatiate model<br>
+from sklearn.neural_network import MLPClassifier<br>
+model = MLPClassifier(max_iter=1000, alpha=1)<br>
+model.fit(x_train, y_train)<br>
+print("Model Accuracy on training set:", model.score(x_train, y_train))<br>
+print("Model Accuracy on Test Set:", model.score(x_test, y_test))<br>
+print(data.columns)<br>
+#create a function for gradio<br>
+def diabetes(Pregnancies, Glucose, Blood_Pressure, SkinThickness, Insulin, BMI,Diabetes_Pedigree, Age):<br>
+    x = np.array([Pregnancies,Glucose,Blood_Pressure,SkinThickness,Insulin,BMI,Diabetes_Pedigree,Age])<br>
+    prediction = model.predict(x.reshape(1, -1))<br>
+    if(prediction==0):<br>
+      return "NO"<br>
+    else:<br>
+      return "YES"<br>
+outputs = gr.Textbox()<br>
+app = gr.Interface(fn=diabetes, inputs=['number','number','number','number','number','number','number','number'], outputs=outputs,description="Detection of Diabeties")<br>
+app.launch(share=True)<br>
 
 ### Output:
 ![image](https://github.com/user-attachments/assets/f418b140-f6cd-4718-8811-da876021fb98)
