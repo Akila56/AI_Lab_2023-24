@@ -24,8 +24,6 @@ B is A*D.<br>
 ### Output:
 ![image](https://github.com/user-attachments/assets/b8a63a89-054c-4846-a58c-6693b896bb7d)
 
-Result:
-Thus the factorial of given number was found by logic programming.
 
 
 
