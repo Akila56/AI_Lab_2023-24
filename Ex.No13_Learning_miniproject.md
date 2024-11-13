@@ -4,18 +4,18 @@
 ### AIM: 
 To write a program to train the classifier for Diabetes Prediction.
 ###  Algorithm:
-Start the program.
-Import required Python libraries, including NumPy, Pandas, Google Colab, Gradio, and various scikit-learn modules.
-Mount Google Drive using Google Colab's 'drive.mount()' method to access the data file located in Google Drive.
-Install the Gradio library using 'pip install gradio'.
-Load the diabetes dataset from a CSV file ('diabetes.csv') using Pandas.
-Separate the target variable ('Outcome') from the input features and Scale the input features using the StandardScaler from scikit-learn.
-Create a multi-layer perceptron (MLP) classifier model using scikit-learn's 'MLPClassifier'.
-Train the model using the training data (x_train and y_train).
-Define a function named 'diabetes' that takes input parameters for various features and Use the trained machine learning model to predict the outcome based on the input features.
-Create a Gradio interface using 'gr.Interface' and Specify the function to be used to make predictions based on user inputs.
-Launch the Gradio web application, enabling sharing, to allow users to input their data and get predictions regarding diabetes risk.
-Stop the program.
+Start the program.<br>
+Import required Python libraries, including NumPy, Pandas, Google Colab, Gradio, and various scikit-learn modules.<br>
+Mount Google Drive using Google Colab's 'drive.mount()' method to access the data file located in Google Drive.<br>
+Install the Gradio library using 'pip install gradio'.<br>
+Load the diabetes dataset from a CSV file ('diabetes.csv') using Pandas.<br>
+Separate the target variable ('Outcome') from the input features and Scale the input features using the StandardScaler from scikit-learn.<br>
+Create a multi-layer perceptron (MLP) classifier model using scikit-learn's 'MLPClassifier'.<br>
+Train the model using the training data (x_train and y_train).<br>
+Define a function named 'diabetes' that takes input parameters for various features and Use the trained machine learning model to predict the outcome based on the input features.<br>
+Create a Gradio interface using 'gr.Interface' and Specify the function to be used to make predictions based on user inputs.<br>
+Launch the Gradio web application, enabling sharing, to allow users to input their data and get predictions regarding diabetes risk.<br>
+Stop the program.<br>
 ### Program:
 from google.colab import drive<br>
 drive.mount('/content/gdrive')<br>
